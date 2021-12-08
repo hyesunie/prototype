@@ -1,0 +1,118 @@
+/* @keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+} */
+@keyframes tostart {
+  75% {
+    right: 0;
+  }
+  95% {
+    right: 100%;
+  }
+  98% {
+    right: 200%;
+  }
+  99% {
+    right: 0;
+  }
+}
+
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+main {
+  position: relative;
+  top: 100px;
+  left: 100px;
+  width: 20vw;
+  height: 50vh;
+  border: solid;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  /* z-index: 2; */
+}
+
+div.slide__content {
+  position: relative;
+  flex: 0 0 100%;
+  /* z-index: 1; */
+}
+
+/* div:nth-child(1) {
+  background-color: yellow;
+}
+div:nth-child(2) {
+  background-color: green;
+}
+div:nth-child(3) {
+  background-color: blue;
+} */
+
+.yello {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+div.slide__content {
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .slide__content {
+    animation-duration: 4s;
+    animation-name: tonext, snap;
+    /* animation-timing-function: ease; */
+    animation-iteration-count: infinite;
+  }
+
+  /* div:last-child {
+    animation-name: tostart, snap;
+  } */
+}
+
+main:hover {
+  animation-name: none;
+}
